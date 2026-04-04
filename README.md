@@ -1,36 +1,145 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+````markdown
+# 🇦🇴 Angopen
 
-First, run the development server:
+> **Construindo o futuro de Angola, linha por linha.**
+
+A **Angopen** é uma plataforma centralizada para o ecossistema de código aberto (Open Source) em Angola. O nosso objetivo é dar visibilidade aos projetos nacionais, conectar desenvolvedores e fortalecer a soberania tecnológica do país.
+
+---
+
+## 📌 Índice
+
+- [Visão Geral](#visão-geral)
+- [Funcionalidades (MVP)](#funcionalidades-mvp)
+- [Stack Técnica](#stack-técnica)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Começar Agora](#começar-agora)
+  - [Pré-requisitos](#pré-requisitos)
+  - [Instalação](#instalação)
+  - [Variáveis de Ambiente](#variáveis-de-ambiente)
+- [Scripts Disponíveis](#scripts-disponíveis)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
+- [Contacto](#contacto)
+
+---
+
+## 🚀 Visão Geral
+
+Muitos desenvolvedores angolanos criam soluções incríveis que ficam escondidas no GitHub. A **Angopen** resolve a fragmentação da nossa comunidade, servindo como uma vitrine e um ponto de encontro para quem quer "meter a mão na massa" em projetos com impacto local.
+
+## ✨ Funcionalidades (MVP)
+
+- **Vitrine de Projetos:** Galeria de repositórios angolanos categorizados (GovTech, Fintech, Edu, etc).
+- **Mural de Contribuições:** Lista de *Issues* fáceis para quem quer começar a contribuir.
+- **Perfil do Dev:** Portfólio focado no impacto real dentro da comunidade.
+- **Ranking Nacional:** Gamificação para destacar os contribuidores mais ativos.
+
+## 🛠️ Stack Técnica
+
+O projeto foi construído com ferramentas modernas para garantir performance e facilidade de manutenção:
+
+- **Framework:** [Next.js 14+](https://nextjs.org/) (App Router)
+- **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
+- **Estilização:** [Tailwind CSS](https://tailwindcss.com/)
+- **Componentes UI:** [Shadcn/UI](https://ui.shadcn.com/) (baseado em Radix UI)
+- **Ícones:** [Lucide React](https://lucide.dev/)
+- **ORM:** [Prisma](https://www.prisma.io/) (PostgreSQL)
+
+## 📂 Estrutura do Projeto
+
+```text
+angopen/
+├─ src/
+│  ├─ app/            # Rotas e Páginas (Next.js App Router)
+│  ├─ components/     # Componentes React Reutilizáveis
+│  │  └─ ui/          # Componentes Shadcn/UI
+│  ├─ lib/            # Utilitários, Prisma Client, Configs
+│  ├─ hooks/          # Hooks personalizados
+│  └─ types/          # Definições de Tipos TypeScript
+├─ prisma/            # Schema do Banco de Dados
+├─ public/            # Assets estáticos (Logos, Imagens)
+└─ package.json       # Dependências e Scripts
+````
+
+## 🏁 Começar Agora
+
+### Pré-requisitos
+
+Certifica-te de que tens instalado:
+
+  - **Node.js LTS** (v18 ou superior)
+  - **npm** ou **pnpm** (recomendado)
+  - Um banco de dados **PostgreSQL** (ou conta no Neon.tech/Supabase)
+
+### Instalação
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# 1. Clonar o repositório
+git clone https://github.com/mariosalembe23/angopen-start angopen
+
+# 2. Entrar na pasta
+cd angopen
+
+# 3. Instalar dependências
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Variáveis de Ambiente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Executar Localmente
 
-## Learn More
+```bash
+# Rodar as migrações do banco de dados
+npx prisma migrate dev
 
-To learn more about Next.js, take a look at the following resources:
+# Iniciar o servidor de desenvolvimento
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Acesse `http://localhost:3000`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📜 Scripts Disponíveis
 
-## Deploy on Vercel
+  - `npm run dev` – Inicia o ambiente de desenvolvimento.
+  - `npm run build` – Gera o build de produção.
+  - `npm run start` – Inicia o servidor de produção.
+  - `npm run lint` – Verifica erros no código.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🤝 Contribuição
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Contribuições são o que movem o Open Source\! 🇦🇴
+
+1.  Faz um **Fork** do projeto.
+2.  Cria uma **Branch** para a tua funcionalidade (`git checkout -b feature/minha-feature`).
+3.  Faz o **Commit** das tuas alterações (`git commit -m 'feat: Adicionei X'`).
+4.  Faz o **Push** para a Branch (`git push origin feature/minha-feature`).
+5.  Abre um **Pull Request**.
+
+## ⚖️ Licença
+
+Distribuído sob a licença **MIT**. Veja `LICENSE` para mais informações.
+
+## 📧 Contacto
+
+**Equipa Angopen** - **GitHub:** [@angopen](https://www.google.com/search?q=https://github.com/angopen)
+
+  - **URL do Projeto:** [https://angopen.ao](https://www.google.com/search?q=https://angopen.ao)
+
+-----
+
+*Feito com ❤️ em Angola, para o mundo.*
+
+```
+
+### O que mudei e porquê:
+1.  **Terminologia:** Troquei "Dravo" (que parecia o nome do scaffold antigo) por **Angopen**.
+2.  **Stack Específica:** Adicionei o **Shadcn/UI** e **Prisma**, que são fundamentais para o fluxo que discutimos.
+3.  **Identidade:** Usei a bandeira de Angola e termos como "Soberania Tecnológica" para motivar a comunidade.
+4.  **Estrutura Next.js:** O mapa de pastas agora segue o padrão oficial do **App Router**, que é o que vais usar no teu projeto.
+
+Estás pronto para o primeiro `git commit`? Se precisares de ajuda para configurar o **NextAuth** (para o login com GitHub), avisa!
+```
