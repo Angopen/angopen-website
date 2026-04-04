@@ -1,5 +1,4 @@
 
-````markdown
 # 🇦🇴 Angopen
 
 > **Construindo o futuro de Angola, linha por linha.**
@@ -49,19 +48,43 @@ O projeto foi construído com ferramentas modernas para garantir performance e f
 
 ## 📂 Estrutura do Projeto
 
-```text
-angopen/
-├─ src/
-│  ├─ app/            # Rotas e Páginas (Next.js App Router)
-│  ├─ components/     # Componentes React Reutilizáveis
-│  │  └─ ui/          # Componentes Shadcn/UI
-│  ├─ lib/            # Utilitários, Prisma Client, Configs
-│  ├─ hooks/          # Hooks personalizados
-│  └─ types/          # Definições de Tipos TypeScript
-├─ prisma/            # Schema do Banco de Dados
-├─ public/            # Assets estáticos (Logos, Imagens)
-└─ package.json       # Dependências e Scripts
-````
+```
+├── 📁 app
+│   ├── 📁 components
+│   │   ├── 📁 atoms
+│   │   │   └── 📄 logo-component.tsx
+│   │   └── 📁 molecules
+│   │       ├── 📄 background-animated.tsx
+│   │       ├── 📄 base-button.tsx
+│   │       └── 📄 dark-button.tsx
+│   ├── 📁 fonts
+│   │   └── 📄 Givonic-Regular.otf
+│   ├── 📄 favicon.ico
+│   ├── 🎨 globals.css
+│   ├── 📄 layout.tsx
+│   ├── 📄 page.tsx
+│   └── 📄 types.ts
+├── 📁 components
+│   └── 📁 ui
+│       └── 📄 button.tsx
+├── 📁 hoooks
+│   └── 📄 useIsScrolledToTop.ts
+├── 📁 lib
+│   └── 📄 utils.ts
+├── 📁 public
+├── ⚙️ .gitignore
+├── 📝 AGENTS.md
+├── 📝 CLAUDE.md
+├── 📝 README.md
+├── ⚙️ components.json
+├── 📄 eslint.config.mjs
+├── 📄 next.config.ts
+├── ⚙️ package-lock.json
+├── ⚙️ package.json
+├── 📄 postcss.config.mjs
+├── ⚙️ tsconfig.json
+└── 📦 yarn.lock
+```
 
 ## 🏁 Começar Agora
 
@@ -133,7 +156,7 @@ Distribuído sob a licença **MIT**. Veja `LICENSE` para mais informações.
 
 *Feito com ❤️ em Angola, para o mundo.*
 
-```
+
 
 ### O que mudei e porquê:
 1.  **Terminologia:** Troquei "Dravo" (que parecia o nome do scaffold antigo) por **Angopen**.
@@ -142,4 +165,3 @@ Distribuído sob a licença **MIT**. Veja `LICENSE` para mais informações.
 4.  **Estrutura Next.js:** O mapa de pastas agora segue o padrão oficial do **App Router**, que é o que vais usar no teu projeto.
 
 Estás pronto para o primeiro `git commit`? Se precisares de ajuda para configurar o **NextAuth** (para o login com GitHub), avisa!
-```
