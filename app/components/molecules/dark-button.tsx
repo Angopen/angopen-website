@@ -20,8 +20,8 @@ export const DarkButton: React.FC<DarkButtonProps> = ({
       onClick={onClick}
       disabled={disabled || isLoading}
       variant="outline"
-      className={`rounded-full cursor-pointer! hover:bg-zinc-800/80 border-zinc-800 bg-zinc-900 leading-none! gap-2 py-5 px-4 items-center! ${className}`}
-      size="sm"
+      className={`rounded-full flex! cursor-pointer! hover:bg-zinc-800/80 border-zinc-800 bg-zinc-900 leading-none! gap-2 py-5 px-4 items-center! [&_svg]:size-auto] ${className}`}
+      
     >
       {children}
     </Button>
