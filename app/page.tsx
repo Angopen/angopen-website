@@ -15,9 +15,11 @@ import { DarkButton } from "./components/molecules/dark-button";
 import { BaseButton } from "./components/molecules/base-button";
 import { useIsScrolledToTop } from "@/hoooks/useIsScrolledToTop";
 import { LogoComponent } from "./components/atoms/logo-component";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const isAtTop = useIsScrolledToTop(10);
+  const router = useRouter();
 
   return (
     <div>
@@ -69,7 +71,7 @@ export default function Home() {
               {item.name}
             </Link>
           ))}
-          <BaseButton>
+          <BaseButton onClick={() => router.push("/signin")}>
             <p className="pt-0.5 font-semibold! text-[15px] text-white">
               Entrar
             </p>
