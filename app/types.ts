@@ -297,7 +297,7 @@ export const openSourceAgents = [
 export const footerContent = {
   brand: {
     name: "Angopen",
-    email: "angopen@gmail.com",
+    email: "angopenangola@gmail.com",
     slogan: "Fortalecendo a tecnologia nacional, commit a commit.",
     copyright: `© ${new Date().getFullYear()} Angopen. Todos os direitos reservados.`,
   },

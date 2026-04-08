@@ -4,6 +4,7 @@ import { LogoComponent } from "@/app/components/atoms/logo-component";
 import { BaseButton } from "@/app/components/molecules/base-button";
 import { DarkButton } from "@/app/components/molecules/dark-button";
 import { useIsScrolledToTop } from "@/hoooks/useIsScrolledToTop";
+import { ChatLines } from "iconoir-react/regular";
 import Link from "next/link";
 
 export default function FeedbackPage() {
@@ -18,12 +19,21 @@ export default function FeedbackPage() {
           <LogoComponent size={8} />
         </Link>
         <div className="flex items-center gap-4">
-          <DarkButton className="text-white! bg-transparent! border-none! hover:underline! rounded-lg!">
-            Documentação
-          </DarkButton>
-          <DarkButton className="text-white! rounded-lg!">
-            Bater um papo
-          </DarkButton>
+          <Link href={"/overview"}>
+            <DarkButton className="text-white! bg-transparent! border-none! hover:underline! rounded-lg!">
+              Overview
+            </DarkButton>
+          </Link>
+          <Link href={""} className="ret:flex hidden">
+            <DarkButton className="text-white! rounded-lg!">
+              Bater um papo
+            </DarkButton>
+          </Link>
+          <Link href={""} className="ret:hidden flex">
+            <DarkButton className="text-white! size-10 px-0! py-0! rounded-full!">
+              <ChatLines className="size-5" />
+            </DarkButton>
+          </Link>
         </div>
       </header>
       <main className="h-full">
@@ -73,7 +83,7 @@ export default function FeedbackPage() {
                 placeholder="Deixa aqui o teu feedback..."
                 className="bg-zinc-900 outline-none focus:border-zinc-500 border border-zinc-700 py-2.5 rounded-lg w-full text-white px-4"
               />
-              <div className="pt-4 text-center">
+              {/* <div className="pt-4 text-center">
                 <span className="text-white">Nível de Impacto</span>
                 <div className="flex mt-3 justify-center items-center gap-4">
                   {["1", "2", "3", "4", "5"].map((item) => (
@@ -85,7 +95,7 @@ export default function FeedbackPage() {
                     </DarkButton>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
             <BaseButton className="w-full! mt-6 py-6! font-semibold! rounded-lg! text-base!">
               Enviar Feedback

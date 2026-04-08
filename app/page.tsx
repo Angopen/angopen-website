@@ -6,7 +6,6 @@ import {
   allTechLanguages,
   comments,
   features,
-  footerContent,
   menuNavbar,
   openSourceAgents,
 } from "./types";
@@ -16,6 +15,8 @@ import { BaseButton } from "./components/molecules/base-button";
 import { useIsScrolledToTop } from "@/hoooks/useIsScrolledToTop";
 import { LogoComponent } from "./components/atoms/logo-component";
 import { useRouter } from "next/navigation";
+import FooterComponent from "./components/molecules/footer-component";
+import Image from "next/image";
 
 export default function Home() {
   const isAtTop = useIsScrolledToTop(10);
@@ -124,7 +125,13 @@ export default function Home() {
                 <header className="">
                   <div className="flex p-5 border-b border-zinc-900 items-center gap-4">
                     <div>
-                      <img src={item.image} className="size-10 rounded-full" />
+                      <Image
+                        width={30}
+                        height={30}
+                        alt="image-avatar"
+                        src={item.image}
+                        className="size-10 rounded-full"
+                      />
                     </div>
                     <div>
                       <p className="text-white font-semibold">{item.name}</p>
@@ -304,56 +311,7 @@ export default function Home() {
           </footer>
         </section>
       </main>
-
-      <footer className="border-t p-5 pt-10 mt-20 border-zinc-900">
-        <div className="w-full max-w-[90%] mx-auto grid grid-cols-[40%_20%_20%_20%] ">
-          <header className="max-w-xs">
-            <p className="flex items-center gap-3 text-white text-2xl">
-              <LogoComponent size={8} />
-              <span className="mt-2">{footerContent.brand.name}</span>
-            </p>
-            <p className="text-zinc-600 pt-5">{footerContent.brand.slogan}</p>
-
-            <p className="text-zinc-100 underline pt-3">
-              {footerContent.brand.email}
-            </p>
-          </header>
-          {footerContent.sections.map((section, index) => (
-            <div key={index}>
-              <h5 className="text-zinc-600 text-lg">{section.title}</h5>
-
-              <div className="flex flex-col mt-7 gap-5">
-                {section.links.map((link, index) => (
-                  <Link
-                    key={index}
-                    href={link.href}
-                    className="text-white/80 hover:underline hover:text-white transition-all"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="border-t max-w-[90%] mx-auto flex items-center justify-between border-zinc-900 mt-10 pt-8">
-          <div>
-            <p className="text-zinc-600">{footerContent.brand.copyright}</p>
-          </div>
-          <div className="flex items-center gap-8">
-            {footerContent.bottom.legal.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                className="text-white/80 hover:underline hover:text-white transition-all text-sm"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </footer>
+      <FooterComponent />
     </div>
   );
 }

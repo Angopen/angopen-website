@@ -8,14 +8,16 @@ import Link from "next/link";
 export default function LoginPage() {
   return (
     <div className="flex items-center justify-center w-full h-dvh">
-      <div className="max-w-xl flex flex-col items-center w-full mx-auto ">
+      <div className="pot:max-w-xl px-5 flex flex-col items-center w-full mx-auto ">
         <header className="flex flex-col items-center">
-          <LogoComponent size={9} />
-          <h1 className="text-white text-4xl pt-7 font-extrabold">
+          <Link href={"/"} className="">
+            <LogoComponent size={9} />
+          </Link>
+          <h1 className="text-white text-3xl ret:text-4xl pt-7 font-extrabold">
             Iniciar Sessão
           </h1>
           <div className="max-w-80 text-center pt-3 mx-auto">
-            <p className="text-sm text-zinc-500">
+            <p className="ret:text-sm text-base text-zinc-500">
               Inicie sessão para acessar o painel de controle e gerenciar suas
               tarefas de forma eficiente.
             </p>
