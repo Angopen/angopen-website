@@ -4,6 +4,7 @@ import { BaseButton } from "../components/molecules/base-button";
 import { DarkButton } from "../components/molecules/dark-button";
 import { Github } from "iconoir-react";
 import Link from "next/link";
+import { Input } from "../components/molecules/input";
 
 export default function LoginPage() {
   return (
@@ -25,7 +26,7 @@ export default function LoginPage() {
         </header>
         <main className="w-full max-w-80 mt-10">
           <div>
-            <input
+            <Input
               type="text"
               name="email"
               id="email"
@@ -33,7 +34,7 @@ export default function LoginPage() {
               className="bg-zinc-900 outline-none focus:border-zinc-500 border border-zinc-700 py-2.5 rounded-lg w-full text-white px-4"
             />
             <BaseButton className="w-full! mt-3 py-6! font-semibold! rounded-lg! text-base!">
-              Entrar
+              Registrar-se
             </BaseButton>
           </div>
 

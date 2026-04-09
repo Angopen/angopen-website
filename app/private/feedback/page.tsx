@@ -1,17 +1,30 @@
 "use client";
 
 import { LogoComponent } from "@/app/components/atoms/logo-component";
+import { FinishFeebackModal } from "@/app/components/modals/finish-feedback";
 import { BaseButton } from "@/app/components/molecules/base-button";
 import { DarkButton } from "@/app/components/molecules/dark-button";
+import { Input } from "@/app/components/molecules/input";
+import { Textarea } from "@/app/components/molecules/text-area";
 import { useIsScrolledToTop } from "@/hoooks/useIsScrolledToTop";
 import { ChatLines } from "iconoir-react/regular";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function FeedbackPage() {
   const isAtTop = useIsScrolledToTop();
+  const [openModal, setOpenModal] = useState(false);
+
+  const handleOpenModal = () => {
+    setOpenModal(true);
+  };
 
   return (
     <div className="flex items-center flex-col justify-between w-full h-dvh">
+      <FinishFeebackModal
+        open={openModal}
+        onOpenChange={() => setOpenModal(false)}
+      />
       <header
         className={`flex sticky top-0 left-0 right-0 items-center justify-between py-4 w-full px-8 z-50 ${isAtTop ? "bg-transparent" : "bg-[#0a0a0a] backdrop-blur-sm border-b border-zinc-800"}`}
       >
@@ -53,14 +66,14 @@ export default function FeedbackPage() {
           </header>
           <div className="mt-10 pb-20">
             <div className="flex flex-col gap-3">
-              <input
+              <Input
                 type="text"
                 name="name"
                 id="name"
                 placeholder="Primeiro nome & Sobrenome"
                 className="bg-zinc-900 outline-none focus:border-zinc-500 border border-zinc-700 py-2.5 rounded-lg w-full text-white px-4"
               />
-              <input
+              <Input
                 type="text"
                 name="email"
                 id="email"
@@ -68,7 +81,7 @@ export default function FeedbackPage() {
                 className="bg-zinc-900 outline-none focus:border-zinc-500 border border-zinc-700 py-2.5 rounded-lg w-full text-white px-4"
               />
 
-              <input
+              <Input
                 type="text"
                 name="atuation"
                 id="atuation"
@@ -76,28 +89,19 @@ export default function FeedbackPage() {
                 className="bg-zinc-900 outline-none focus:border-zinc-500 border border-zinc-700 py-2.5 rounded-lg w-full text-white px-4"
               />
 
-              <textarea
+              <Textarea
                 name="description"
                 id="description"
                 rows={4}
                 placeholder="Deixa aqui o teu feedback..."
                 className="bg-zinc-900 outline-none focus:border-zinc-500 border border-zinc-700 py-2.5 rounded-lg w-full text-white px-4"
               />
-              {/* <div className="pt-4 text-center">
-                <span className="text-white">Nível de Impacto</span>
-                <div className="flex mt-3 justify-center items-center gap-4">
-                  {["1", "2", "3", "4", "5"].map((item) => (
-                    <DarkButton
-                      key={item}
-                      className="w-full! size-10! leading-0! px-0! py-0! text-white! font-mono! text-base! font-semibold! rounded-full!"
-                    >
-                      {item}
-                    </DarkButton>
-                  ))}
-                </div>
-              </div> */}
+              {/*  */}
             </div>
-            <BaseButton className="w-full! mt-6 py-6! font-semibold! rounded-lg! text-base!">
+            <BaseButton
+              onClick={handleOpenModal}
+              className="w-full! mt-6 py-6! font-semibold! rounded-lg! text-base!"
+            >
               Enviar Feedback
             </BaseButton>
           </div>
