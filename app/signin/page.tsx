@@ -4,6 +4,7 @@ import { BaseButton } from "../components/molecules/base-button";
 import { DarkButton } from "../components/molecules/dark-button";
 import { Github } from "iconoir-react";
 import Link from "next/link";
+import { Input } from "../components/molecules/input";
 
 export default function LoginPage() {
   return (
@@ -25,7 +26,7 @@ export default function LoginPage() {
         </header>
         <main className="w-full max-w-80 mt-10">
           <div>
-            <input
+            <Input
               type="text"
               name="email"
               id="email"
@@ -35,9 +36,18 @@ export default function LoginPage() {
             <BaseButton className="w-full! mt-3 py-6! font-semibold! rounded-lg! text-base!">
               Entrar
             </BaseButton>
+            <Link
+              href={"/signup"}
+              className="text-white text-center flex justify-center mt-5 gap-1 transition-all group"
+            >
+              Não tem uma conta?{" "}
+              <span className="text-base-design group-hover:underline">
+                Registrar-se
+              </span>
+            </Link>
           </div>
 
-          <div className="w-full border-t pt-8 flex flex-col gap-3 mt-8 border-zinc-900">
+          <div className="w-full border-t pt-6 flex flex-col gap-3 mt-6 border-zinc-900">
             <DarkButton className="w-full! py-6! text-white! text-base! font-semibold! rounded-lg!">
               <p>
                 <Mailbox size={6} className="size-6" />
@@ -51,11 +61,11 @@ export default function LoginPage() {
           </div>
         </main>
         <footer className="text-center mt-6 w-full">
-          <Link href={"/signup"} className="text-white transition-all group">
-            Não tem uma conta?{" "}
-            <span className="text-base-design group-hover:underline">
-              Registrar-se
-            </span>
+          <Link
+            href={"/reset"}
+            className="text-white hover:underline hover:text-white/70 transition-all group"
+          >
+            Esqueci minha Palavra-chave
           </Link>
         </footer>
       </div>

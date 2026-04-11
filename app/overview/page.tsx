@@ -199,6 +199,11 @@ export default function Overview() {
                   </div>
                 ))}
               </div>
+              <Link href={"/signup"}>
+                <BaseButton className="mt-10 ret:w-auto! w-full! py-6! font-semibold! rounded-lg! text-base!">
+                  Quero Participar
+                </BaseButton>
+              </Link>
             </div>
           </div>
         </section>
