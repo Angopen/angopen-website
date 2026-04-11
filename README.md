@@ -1,167 +1,153 @@
+# Angopen
 
-# 🇦🇴 Angopen
+Plataforma web para promover o ecossistema de open source angolano, destacar projectos, conectar desenvolvedores e dar visibilidade a contribuições relevantes.
 
-> **Construindo o futuro de Angola, linha por linha.**
+## Visão geral
 
-A **Angopen** é uma plataforma centralizada para o ecossistema de código aberto (Open Source) em Angola. O nosso objetivo é dar visibilidade aos projetos nacionais, conectar desenvolvedores e fortalecer a soberania tecnológica do país.
+Este repositório contém a base do frontend da Angopen. A aplicação está estruturada como uma landing page moderna com seções de apresentação, comunidade, destaque de perfis e blocos de produto que apontam para a evolução futura da plataforma.
 
----
+O foco atual é interface, experiência visual e organização de componentes. Não existe, neste momento, backend próprio, camada de autenticação nem base de dados configurada no código presente no repositório.
 
-## 📌 Índice
+## Stack técnica
 
-- [Visão Geral](#visão-geral)
-- [Funcionalidades (MVP)](#funcionalidades-mvp)
-- [Stack Técnica](#stack-técnica)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Começar Agora](#começar-agora)
-  - [Pré-requisitos](#pré-requisitos)
-  - [Instalação](#instalação)
-  - [Variáveis de Ambiente](#variáveis-de-ambiente)
-- [Scripts Disponíveis](#scripts-disponíveis)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
-- [Contacto](#contacto)
+- Next.js 16.2.2 com App Router
+- React 19.2.4
+- TypeScript 5
+- Tailwind CSS 4
+- shadcn/ui e Radix UI
+- class-variance-authority, clsx e tailwind-merge para composição de estilos
+- Lucide React, iconoir-react e @hugeicons/react para ícones
+- three e postprocessing para experiências visuais/animações mais ricas
+- ESLint 9 com eslint-config-next
 
----
+## Organização do projeto
 
-## 🚀 Visão Geral
-
-Muitos desenvolvedores angolanos criam soluções incríveis que ficam escondidas no GitHub. A **Angopen** resolve a fragmentação da nossa comunidade, servindo como uma vitrine e um ponto de encontro para quem quer "meter a mão na massa" em projetos com impacto local.
-
-## ✨ Funcionalidades (MVP)
-
-- **Vitrine de Projetos:** Galeria de repositórios angolanos categorizados (GovTech, Fintech, Edu, etc).
-- **Mural de Contribuições:** Lista de *Issues* fáceis para quem quer começar a contribuir.
-- **Perfil do Dev:** Portfólio focado no impacto real dentro da comunidade.
-- **Ranking Nacional:** Gamificação para destacar os contribuidores mais ativos.
-
-## 🛠️ Stack Técnica
-
-O projeto foi construído com ferramentas modernas para garantir performance e facilidade de manutenção:
-
-- **Framework:** [Next.js 14+](https://nextjs.org/) (App Router)
-- **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
-- **Estilização:** [Tailwind CSS](https://tailwindcss.com/)
-- **Componentes UI:** [Shadcn/UI](https://ui.shadcn.com/) (baseado em Radix UI)
-- **Ícones:** [Lucide React](https://lucide.dev/)
-- **ORM:** [Prisma](https://www.prisma.io/) (PostgreSQL)
-
-## 📂 Estrutura do Projeto
-
-```
-├── 📁 app
-│   ├── 📁 components
-│   │   ├── 📁 atoms
-│   │   │   └── 📄 logo-component.tsx
-│   │   └── 📁 molecules
-│   │       ├── 📄 background-animated.tsx
-│   │       ├── 📄 base-button.tsx
-│   │       └── 📄 dark-button.tsx
-│   ├── 📁 fonts
-│   │   └── 📄 Givonic-Regular.otf
-│   ├── 📄 favicon.ico
-│   ├── 🎨 globals.css
-│   ├── 📄 layout.tsx
-│   ├── 📄 page.tsx
-│   └── 📄 types.ts
-├── 📁 components
-│   └── 📁 ui
-│       └── 📄 button.tsx
-├── 📁 hoooks
-│   └── 📄 useIsScrolledToTop.ts
-├── 📁 lib
-│   └── 📄 utils.ts
-├── 📁 public
-├── ⚙️ .gitignore
-├── 📝 AGENTS.md
-├── 📝 CLAUDE.md
-├── 📝 README.md
-├── ⚙️ components.json
-├── 📄 eslint.config.mjs
-├── 📄 next.config.ts
-├── ⚙️ package-lock.json
-├── ⚙️ package.json
-├── 📄 postcss.config.mjs
-├── ⚙️ tsconfig.json
-└── 📦 yarn.lock
+```text
+app/
+  globals.css           Estilos globais, fontes e tokens visuais
+  layout.tsx            Layout raiz e metadata da aplicação
+  page.tsx              Página inicial principal
+  types.ts              Conteúdo estático e dados usados na UI
+  components/
+    atoms/              Componentes base, como logo e ícones
+    molecules/          Blocos compostos, como botões, footer e background animado
+    fonts/              Fonte local usada no projecto
+  signin/               Página de autenticação
+  signup/               Página de registo
+  private/feedback/     Página interna de feedback
+  fonts/overview/       Página auxiliar de apresentação
+components/
+  ui/                   Componentes reutilizáveis de UI
+hoooks/
+  useIsScrolledToTop.ts  Hook personalizado para estado do scroll
+lib/
+  utils.ts              Helpers genéricos, como merge de classes
+public/                 Assets estáticos
 ```
 
-## 🏁 Começar Agora
+## Funcionalidades actuais
+
+- Hero principal com CTA para registo e entrada
+- Navegação para secções da plataforma
+- Cards de profissionais e áreas de actuação
+- Secção de sistema com pilares do produto
+- Secção de comunidade com mensagens institucionais
+- Footer estruturado com links e informação da marca
+
+## Como executar
 
 ### Pré-requisitos
 
-Certifica-te de que tens instalado:
-
-  - **Node.js LTS** (v18 ou superior)
-  - **npm** ou **pnpm** (recomendado)
-  - Um banco de dados **PostgreSQL** (ou conta no Neon.tech/Supabase)
+- Node.js 20 LTS ou superior
+- npm, pnpm ou yarn
 
 ### Instalação
 
 ```bash
-# 1. Clonar o repositório
-git clone https://github.com/mariosalembe23/angopen-start angopen
-
-# 2. Entrar na pasta
-cd angopen
-
-# 3. Instalar dependências
+git clone <url-do-repositorio>
+cd dravo
 npm install
 ```
 
-### Variáveis de Ambiente
-
----
-
-### Executar Localmente
+### Desenvolvimento
 
 ```bash
-# Rodar as migrações do banco de dados
-npx prisma migrate dev
-
-# Iniciar o servidor de desenvolvimento
 npm run dev
 ```
 
-Acesse `http://localhost:3000`.
+Depois abre `http://localhost:3000`.
 
-## 📜 Scripts Disponíveis
+### Produção
 
-  - `npm run dev` – Inicia o ambiente de desenvolvimento.
-  - `npm run build` – Gera o build de produção.
-  - `npm run start` – Inicia o servidor de produção.
-  - `npm run lint` – Verifica erros no código.
+```bash
+npm run build
+npm run start
+```
 
-## 🤝 Contribuição
+## Scripts disponíveis
 
-Contribuições são o que movem o Open Source\! 🇦🇴
+- `npm run dev` inicia o ambiente local de desenvolvimento.
+- `npm run build` compila a aplicação para produção.
+- `npm run start` executa a build de produção.
+- `npm run lint` executa a análise estática com ESLint.
 
-1.  Faz um **Fork** do projeto.
-2.  Cria uma **Branch** para a tua funcionalidade (`git checkout -b feature/minha-feature`).
-3.  Faz o **Commit** das tuas alterações (`git commit -m 'feat: Adicionei X'`).
-4.  Faz o **Push** para a Branch (`git push origin feature/minha-feature`).
-5.  Abre um **Pull Request**.
+## Convenções de contribuição
 
-## ⚖️ Licença
+Antes de abrir um PR, mantém o trabalho pequeno, focado e consistente com o estilo já existente no código.
 
-Distribuído sob a licença **MIT**. Veja `LICENSE` para mais informações.
+- Cria branches por intenção: `feature/nome`, `fix/nome`, `chore/nome`, `docs/nome`, `refactor/nome`, `test/nome`.
+- Evita misturar refactor com nova funcionalidade no mesmo PR, salvo quando for estritamente necessário.
+- Executa `npm run lint` antes de submeter alterações.
+- Não adiciona arquivos gerados, dependências desnecessárias ou alterações fora do escopo.
+- Mantém nomes de componentes, hooks e ficheiros claros e alinhados com a estrutura actual.
 
-## 📧 Contacto
+## Padrão de commits
 
-**Equipa Angopen** - **GitHub:** [@angopen](https://www.google.com/search?q=https://github.com/angopen)
+Usamos mensagens no estilo Conventional Commits.
 
-  - **URL do Projeto:** [https://angopen.ao](https://www.google.com/search?q=https://angopen.ao)
+Formato:
 
------
+```text
+tipo(escopo opcional): descrição curta no imperativo
+```
 
-*Feito com ❤️ em Angola, para o mundo.*
+Tipos recomendados:
 
+- `feat`: nova funcionalidade
+- `fix`: correcção de bug
+- `docs`: alterações em documentação
+- `style`: ajustes de formatação ou estilo sem impacto funcional
+- `refactor`: refactor sem mudança de comportamento
+- `test`: inclusão ou ajuste de testes
+- `chore`: manutenção geral do projecto
+- `perf`: melhoria de performance
+- `build`: alterações de build ou dependências
+- `ci`: mudanças em automação ou pipelines
 
+Exemplos:
 
-### O que mudei e porquê:
-1.  **Terminologia:** Troquei "Dravo" (que parecia o nome do scaffold antigo) por **Angopen**.
-2.  **Stack Específica:** Adicionei o **Shadcn/UI** e **Prisma**, que são fundamentais para o fluxo que discutimos.
-3.  **Identidade:** Usei a bandeira de Angola e termos como "Soberania Tecnológica" para motivar a comunidade.
-4.  **Estrutura Next.js:** O mapa de pastas agora segue o padrão oficial do **App Router**, que é o que vais usar no teu projeto.
+```text
+feat(home): adiciona secção de comunidade
+fix(button): corrige estado desativado
+docs(readme): melhora instruções de contribuição
+```
 
-Estás pronto para o primeiro `git commit`? Se precisares de ajuda para configurar o **NextAuth** (para o login com GitHub), avisa!
+## Checklist para pull request
+
+- Código lintado com sucesso
+- Mudanças focadas em uma única intenção
+- Mensagens de commit claras e consistentes
+- Prints ou notas adicionadas quando houver mudança visual
+- Sem erros óbvios de navegação, layout ou tipagem
+
+## Licença
+
+Este repositório ainda não declara uma licença no código-fonte.
+
+## Contacto
+
+Projeto Angopen
+
+---
+
+Feito para o ecossistema angolano de software livre.
