@@ -64,8 +64,8 @@ public/                 Assets estáticos
 ### Instalação
 
 ```bash
-git clone <url-do-repositorio>
-cd dravo
+git clone https://github.com/Angopen/angopen-website angopen
+cd angopen
 npm install
 ```
 
