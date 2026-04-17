@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import TanstackProvider from "./components/providers/tanstack-provider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -131,7 +132,11 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="bg-[#0a0a0a] min-h-full flex flex-col">{children}</body>
+      <body className="bg-[#0a0a0a] min-h-full flex flex-col">
+        <TanstackProvider>
+          {children}
+        </TanstackProvider>
+        </body>
     </html>
   );
 }

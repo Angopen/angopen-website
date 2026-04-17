@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 
 interface DarkButtonProps {
+  type?: "button" | "submit" | "reset";
   children: React.ReactNode;
   onClick?: () => void;
   isLoading?: boolean;
@@ -9,6 +10,7 @@ interface DarkButtonProps {
 }
 
 export const DarkButton: React.FC<DarkButtonProps> = ({
+  type = "button",
   children,
   onClick,
   isLoading = false,

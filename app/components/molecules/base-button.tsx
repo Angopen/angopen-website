@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 
 interface BaseButtonProps {
+  type?: "button" | "submit" | "reset";
   children: React.ReactNode;
   onClick?: () => void;
   isLoading?: boolean;
@@ -9,6 +10,7 @@ interface BaseButtonProps {
 }
 
 export const BaseButton: React.FC<BaseButtonProps> = ({
+  type = "submit",
   children,
   onClick,
   isLoading = false,
@@ -22,6 +24,7 @@ export const BaseButton: React.FC<BaseButtonProps> = ({
       disabled={disabled || isLoading}
       className={`rounded-lg text-white hover:text-white cursor-pointer flex! justify-center transition-all hover:bg-base-design/60 border-base-design bg-base-design leading-none! gap-2 py-5 px-4 items-center! ${className}`}
       size="sm"
+      type={type}
     >
         {children}
     </Button>
