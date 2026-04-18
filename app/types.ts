@@ -746,8 +746,8 @@ export const footerContent = {
       title: "Comunidade",
       links: [
         { label: "Código de Conduta", href: "/conduct" },
-        { label: "Discord da Comunidade", href: "https://discord.gg/..." },
-        { label: "Grupo WhatsApp", href: "https://chat.whatsapp.com/..." },
+        { label: "Discord da Comunidade", href: "/discord" },
+        { label: "Grupo WhatsApp", href: process.env.NEXT_PUBLIC_WHATSAPP_GROUP ?? "#" },
         { label: "Open Collective", href: "/donate" },
       ],
     },
