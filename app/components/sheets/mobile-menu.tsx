@@ -19,6 +19,17 @@ interface SheetDemoProps {
 export function MobileMenu({ open, onOpenChange }: SheetDemoProps) {
   const router = useRouter();
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    const navbarHeight = 100; // altura do teu navbar em px
+    const top =
+      element.getBoundingClientRect().top + window.scrollY - navbarHeight;
+
+    window.scrollTo({ top, behavior: "smooth" });
+  };
+
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent
@@ -44,6 +55,14 @@ export function MobileMenu({ open, onOpenChange }: SheetDemoProps) {
               <button
                 className="font-semibold! justify-between w-full flex items-center transition-all hover:text-white/50 text-[15px] text-white"
                 key={index}
+                onClick={() => {
+                  onOpenChange(false);
+                  if (item.type === "internal") {
+                    scrollToSection(item.href);
+                  } else if (item.type === "external") {
+                    router.push(item.href);
+                  }
+                }}
               >
                 {item.name}
                 <ChevronRight className="size-4 text-white/50 ml-2" />
