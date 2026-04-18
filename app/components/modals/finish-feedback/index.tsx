@@ -11,8 +11,6 @@ import { DarkButton } from "../../molecules/dark-button";
 import { BaseButton } from "../../molecules/base-button";
 import { useState } from "react";
 
-// ─── dados ──────────────────────────────────────────────────────────────────
-
 const PROVINCIAS = [
   "Bengo",
   "Benguela",
