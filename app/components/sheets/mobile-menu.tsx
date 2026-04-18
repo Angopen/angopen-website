@@ -71,12 +71,6 @@ export function MobileMenu({ open, onOpenChange }: SheetDemoProps) {
           </div>
           <footer className="mt-7 px-5 w-full">
             <div className="border-t flex flex-col gap-6 pt-5 border-zinc-900 w-full mb-5">
-              <Link href={"/overview"}>
-                <button className="font-semibold! justify-between w-full flex items-center transition-all hover:text-white/50 text-[15px] text-white">
-                  Overview
-                  <ChevronRight className="size-4 text-white/50 ml-2" />
-                </button>
-              </Link>
               <Link href={"https://github.com/Angopen"} target="_blank">
                 <button className="font-semibold! justify-between w-full flex items-center transition-all hover:text-white/50 text-[15px] text-white">
                   Github

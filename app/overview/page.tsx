@@ -4,7 +4,6 @@ import Link from "next/link";
 import { LogoComponent } from "../components/atoms/logo-component";
 import { DarkButton } from "../components/molecules/dark-button";
 import { useIsScrolledToTop } from "@/hoooks/useIsScrolledToTop";
-import { useEffect, useState } from "react";
 import { Github } from "iconoir-react/regular";
 import {
   communityBenefits,
@@ -17,33 +16,6 @@ import { BaseButton } from "../components/molecules/base-button";
 
 export default function Overview() {
   const isAtTop = useIsScrolledToTop();
-  const [, setGitStars] = useState<number | null>(null);
-
-  useEffect(() => {
-    const getStarsGithub = async () => {
-      try {
-        const res = await fetch(
-          "https://api.github.com/repos/Angopen/angopen-website",
-          {
-            next: { revalidate: 3600 },
-            headers: {
-              Accept: "application/vnd.github.v3+json",
-            },
-          },
-        );
-
-        if (!res.ok) throw new Error("Falha ao buscar dados");
-
-        const data = await res.json();
-        setGitStars(data.stargazers_count);
-      } catch (error) {
-        console.error("Erro ao buscar stars:", error);
-        setGitStars(0);
-      }
-    };
-
-    getStarsGithub();
-  }, []);
 
   return (
     <div>
@@ -199,7 +171,10 @@ export default function Overview() {
                   </div>
                 ))}
               </div>
-              <Link href={"/signup"}>
+              <Link
+                href={process.env.NEXT_PUBLIC_WHATSAPP_GROUP ?? "#"}
+                target="_blank"
+              >
                 <BaseButton className="mt-10 ret:w-auto! w-full! py-6! pot:font-semibold! rounded-lg! text-base!">
                   Quero Participar
                 </BaseButton>
