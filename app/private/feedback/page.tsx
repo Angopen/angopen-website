@@ -15,8 +15,6 @@ import { FinishFeebackModal } from "@/app/components/modals/finish-feedback";
 import { toast } from "sonner";
 import axios from "axios";
 
-// ─── tipos ──────────────────────────────────────────────────────────────────
-
 type FeedbackForm = {
   name: string;
   email: string;
