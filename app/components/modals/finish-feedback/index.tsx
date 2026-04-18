@@ -35,8 +35,6 @@ const PROVINCIAS = [
   "Belas",
 ];
 
-// ─── tipos ──────────────────────────────────────────────────────────────────
-
 interface FinishFeebackModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -44,14 +42,10 @@ interface FinishFeebackModalProps {
   isLoading?: boolean;
 }
 
-// ─── componente de erro ─────────────────────────────────────────────────────
-
 function FieldError({ message }: { message?: string }) {
   if (!message) return null;
   return <p className="text-red-200 text-xs mt-2 ps-1">{message}</p>;
 }
-
-// ─── modal ──────────────────────────────────────────────────────────────────
 
 export function FinishFeebackModal({
   open,
@@ -75,16 +69,12 @@ export function FinishFeebackModal({
     if (!validate()) return;
     try {
       await onSubmit(province, evaluation!);
-      // só reseta se não lançar erro
       setProvince("");
       setEvaluation(null);
-    } catch {
-      // não reseta — deixa os dados preenchidos
-    }
+    } catch {}
   };
 
   const handleClose = () => {
-    // reset ao fechar
     setProvince("");
     setEvaluation(null);
     setErrors({ province: "", evaluation: "" });
