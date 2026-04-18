@@ -10,7 +10,7 @@ import { ChatLines } from "iconoir-react/regular";
 import Link from "next/link";
 import { useState } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { FinishFeebackModal } from "@/app/components/modals/finish-feedback";
 import { toast } from "sonner";
 
@@ -97,6 +97,7 @@ export default function FeedbackPage() {
     handleSubmit,
     getValues,
     reset,
+    control,
     formState: { errors },
   } = useForm<FeedbackForm>({
     defaultValues: {
@@ -241,6 +242,7 @@ export default function FeedbackPage() {
               <Textarea
                 id="message"
                 rows={4}
+                maxLength={500}
                 placeholder="Deixa aqui o teu feedback..."
                 aria-invalid={!!errors.message}
                 {...register("message", {
@@ -250,6 +252,13 @@ export default function FeedbackPage() {
                 })}
               />
               <FieldError message={errors.message?.message} />
+              <p className="text-zinc-200 text-end w-full text-sm">
+                {useWatch({
+                  control,
+                  name: "message",
+                })?.length || 0}
+                /500 caracteres
+              </p>
             </div>
 
             <BaseButton
